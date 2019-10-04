@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #61dafb;
 }
 
 .App-logo {
@@ -33,7 +34,7 @@
 }
 .dark-mode {
   color: orange;
-  background-color: rgb(121, 15, 1);
+  background-color: rgb(24, 26, 32);
 }
 
 .innerCard {
