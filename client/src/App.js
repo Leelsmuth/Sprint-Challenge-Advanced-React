@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SoccerPlayer from "./SoccerPlayers";
 import axios from "axios";
 import "./App.css";
 
@@ -23,20 +24,6 @@ class App extends Component {
       </div>
     );
   }
-}
-
-function SoccerPlayer(props) {
-  return (
-    <div>
-      {props.players.map(player => (
-        <div>
-          <h1>{`Player Name: ${player.name}`}</h1>
-          <p>{`Country: ${player.country}`}</p>
-          <p>{`Number of Internet Searches: ${player.searches}`}</p>
-        </div>
-      ))}
-    </div>
-  );
 }
 
 export default App;
