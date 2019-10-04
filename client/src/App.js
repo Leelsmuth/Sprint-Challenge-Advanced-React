@@ -20,6 +20,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Player Profile</h1>
         <SoccerPlayer players={this.state.players} />
       </div>
     );

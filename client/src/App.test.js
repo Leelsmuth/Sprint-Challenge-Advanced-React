@@ -4,13 +4,14 @@ import "@testing-library/jest-dom/extend-expect";
 import * as rtl from "@testing-library/react";
 import App from "./App";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+let tools;
+
+beforeEach(() => {
+  rtl.cleanup();
+  tools = rtl.render(<App />);
 });
 
-it("shows a specific word", () => {
-  const elementWithRose = tools.queryByText(/rose/i);
-  expect(elementWithRose).toBeInTheDocument();
+it("shows the word player", () => {
+  const elementWithPlayer = tools.queryByText(/player/i);
+  expect(elementWithPlayer).toBeInTheDocument();
 });
