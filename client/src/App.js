@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import axios from "axios";
 import "./App.css";
 
 class App extends Component {
@@ -10,26 +10,33 @@ class App extends Component {
     };
   }
 
+  componentDidMount() {
+    axios.get("http://localhost:5000/api/players").then(res => {
+      this.setState({ players: res.data });
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <SoccerPlayer players={this.state.players} />
       </div>
     );
   }
+}
+
+function SoccerPlayer(props) {
+  return (
+    <div>
+      {props.players.map(player => (
+        <div>
+          <h1>{`Player Name: ${player.name}`}</h1>
+          <p>{`Country: ${player.country}`}</p>
+          <p>{`Number of Internet Searches: ${player.searches}`}</p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default App;
