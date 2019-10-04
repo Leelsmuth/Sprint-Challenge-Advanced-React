@@ -1,6 +1,8 @@
+body {
+  background: #99b4bb;
+}
 .App {
   text-align: center;
-  background: #61dafb;
 }
 
 .App-logo {
@@ -34,7 +36,7 @@
 }
 .dark-mode {
   color: orange;
-  background-color: rgb(24, 26, 32);
+  background-color: rgb(29, 47, 100);
 }
 
 .innerCard {
@@ -52,6 +54,6 @@
   line-height: 1;
   border-radius: 500px;
   border: 1px solid burlywood;
-  background-color: azure;
+  background-color: #61dafb;
   margin: 1%;
 }
